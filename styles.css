@@ -1,0 +1,21 @@
+body{
+    background: rgb(253, 240, 213);
+}
+
+h1 {
+    color: rgb(120, 0, 0);
+    font-family: 'Lucida Sans';
+    border-bottom: 1px solid black;
+}
+
+h2 {
+    color: rgb(193, 18, 31);
+}
+  
+p {
+    color: rgb(0, 48, 73);
+}
+
+ul {
+    color: rgb(102, 155, 188);
+}
