@@ -1,53 +1,60 @@
 body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Lucida Console', monospace;
-    margin: 15px;
-    padding: 5px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #111;
 }
 
-header, footer {
-    text-align: center;
-    padding: 20px 0;
+.container {
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
 }
 
-h1, h2 {
-    border-bottom: 1px solid #fff;
-    margin-left: 15px;
-    margin-right: 15px;
+.hero-image {
+  width: 180px;
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 20px;
+  opacity: 0.95;
 }
 
 h1 {
-    color: #0f0;
-    font-size: 36px;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-h2 {
-    color: #6f6;
-    font-size: 24px;
+p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.5;
 }
 
-p, ul {
-    margin-bottom: 10px;
+a {
+  color: #2563eb;
+  text-decoration: none;
 }
 
-ul {
-    list-style-type: none;
+a:hover {
+  text-decoration: underline;
 }
 
-.education, .experience, .skills, .awards {
-    margin-bottom: 20px;
-    margin-left: 20px;
+.small {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #777;
 }
 
-footer {
-    background-color: #242424;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
+.hero-image {
+  animation: float 3s ease-in-out infinite;
 }
 
-.contact {
-    max-width: 600px;
-    margin: 0 auto;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
