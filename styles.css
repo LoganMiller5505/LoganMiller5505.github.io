@@ -58,3 +58,10 @@ a:hover {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0b0b0b;
+    color: #e5e5e5;
+  }
+}
