@@ -3,34 +3,561 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lmiller.io</title>
+  <meta name="description" content="Logan Miller — CS/AI Engineering student at Auburn University. Portfolio, projects, and contact." />
+
+  <!-- Open Graph — makes links look great when shared on LinkedIn, Discord, etc. -->
+  <meta property="og:title" content="Logan Miller — lmiller.io" />
+  <meta property="og:description" content="CS/AI Engineering student at Auburn University — ML projects, data science, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lmiller.io" />
+  <!-- TODO: Create a 1200×630px preview image, save as og-image.png in repo root,
+       then uncomment the line below: -->
+  <meta property="og:image" content="https://lmiller.io/og-image.png" />
+
+  <title>Logan Miller — lmiller.io</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="container">
 
-    <img 
-      src="under-construction.png" 
-      alt="Under construction"
-      class="hero-image"
-    />
-
-    <h1>Under Construction</h1>
-
-    <p>
-      This site is currently being rebuilt.
-    </p>
-
-    <p>
-      In the meantime, you can reach me at<br />
-      <a href="mailto:logan@lmiller.io">logan@lmiller.io</a>
-    </p>
-
-    <div class="small">
-      CS / AI student — lmiller.io
+  <!-- ── Nav ──────────────────────────────────────────────────────────── -->
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo">Logan Miller</a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="#hero">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="resume.pdf" class="nav__cta" target="_blank" rel="noopener">Resume ↗</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-  </div>
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <section id="hero" class="section hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Hi, I'm</p>
+        <h1 class="hero__name">Logan Miller</h1>
+        <p class="hero__tagline">
+          CS / AI Engineering student at Auburn University —<br />
+          building intelligent systems, one model at a time.
+        </p>
+        <p class="hero__bio">
+          Honors College junior (GPA 3.78, May 2027) with a Business minor.
+          I work at Auburn's RFID Lab reviewing supplier compliance and spend
+          the rest of my time on competitive programming, ethical hacking,
+          and ML research.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">See My Work</a>
+          <a href="resume.pdf" class="btn btn--outline" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <img src="self.jpg" alt="Logan Miller" class="hero__photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Education ─────────────────────────────────────────────────────── -->
+  <section id="education" class="section">
+    <div class="container">
+      <header class="section__header">
+        <span class="section__label">Academia</span>
+        <h2 class="section__title">Education</h2>
+      </header>
+      <div class="edu-card">
+        <div class="edu-card__main">
+          <p class="edu-card__institution">Auburn University</p>
+          <p class="edu-card__degree">B.S. Computer Science — AI Engineering Concentration</p>
+          <div class="edu-card__details">
+            <span class="edu-card__detail">Honors College</span>
+            <span class="edu-card__detail">Business Minor</span>
+            <span class="edu-card__detail">Auburn, AL</span>
+          </div>
+          <div class="edu-card__coursework">
+            <p class="skill-group__label">Relevant Coursework</p>
+            <!-- TODO: Replace the tags below with your actual courses -->
+            <ul class="tags">
+              <li class="tag">Data Structures &amp; Algorithms</li>
+              <li class="tag">Machine Learning</li>
+              <li class="tag">Linear Algebra</li>
+              <li class="tag">Probability &amp; Statistics</li>
+              <li class="tag">Software Construction</li>
+              <li class="tag">Discrete Mathematics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="edu-card__aside">
+          <p class="edu-card__gpa">3.78<span>GPA</span></p>
+          <p class="edu-card__date">Expected May 2027</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ──────────────────────────────────────────────────────── -->
+  <section id="projects" class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <span class="section__label">Work</span>
+        <h2 class="section__title">Projects</h2>
+        <p class="section__subtitle">Machine learning, data science, and systems work.</p>
+      </header>
+      <div class="cards">
+
+        <article class="card">
+          <!-- Bar chart icon — NFL data analytics -->
+          <div class="card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+              <line x1="2" y1="20" x2="22" y2="20"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">NFL Fantasy Football Predictions</h3>
+            <p class="card__meta">Spring 2024 – Summer 2025</p>
+            <p class="card__desc">
+              ML model predicting NFL player fantasy scores using multi-season
+              historical data. Built with a TensorFlow architecture trained on
+              Pandas-processed stats, achieving a mean absolute error of ~7 points.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">Pandas</li>
+              <li class="tag">TensorFlow</li>
+            </ul>
+            <div class="card__links">
+              <a href="https://github.com/LoganMiller5505/nfl-data" target="_blank" rel="noopener" class="card__link">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- Lightning bolt icon — Solar Flare -->
+          <div class="card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Solar Flare Prediction</h3>
+            <p class="card__meta">Auburn Hacks 2024 — Team of 3</p>
+            <p class="card__desc">
+              Hackathon project predicting solar flare probability from 48-hour
+              solar emission data. Built a scikit-learn classification pipeline
+              and an interactive web interface to display live predictions.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">scikit-learn</li>
+              <li class="tag">HTML / CSS</li>
+            </ul>
+            <div class="card__links">
+              <a href="https://devpost.com/software/solar-flare-prediction" target="_blank" rel="noopener" class="card__link">Devpost →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- Neural network icon — Reinforcement Learning -->
+          <div class="card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <circle cx="3" cy="6" r="2"/>
+              <circle cx="21" cy="6" r="2"/>
+              <circle cx="3" cy="18" r="2"/>
+              <circle cx="21" cy="18" r="2"/>
+              <line x1="5" y1="6.5" x2="9.5" y2="10.5"/>
+              <line x1="19" y1="6.5" x2="14.5" y2="10.5"/>
+              <line x1="5" y1="17.5" x2="9.5" y2="13.5"/>
+              <line x1="19" y1="17.5" x2="14.5" y2="13.5"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Reinforcement Learning Study Group</h3>
+            <p class="card__meta">Spring 2024 — with 2 grad students</p>
+            <p class="card__desc">
+              Collaborative exploration of modern RL algorithms (PPO, DQN, A3C)
+              through from-scratch implementations. Worked alongside two Auburn
+              graduate students in the Data Science Society small-group program.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">Reinforcement Learning</li>
+            </ul>
+            <div class="card__links">
+              <a href="https://github.com/LoganMiller5505/RL_DSSOC" target="_blank" rel="noopener" class="card__link">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- TODO: Add more project cards here using the same <article class="card"> structure above -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experience & Skills ────────────────────────────────────────────── -->
+  <section id="experience" class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <span class="section__label">Background</span>
+        <h2 class="section__title">Experience &amp; Skills</h2>
+      </header>
+      <div class="exp-grid">
+
+        <div class="exp-roles">
+          <h3 class="exp-roles__heading">Roles</h3>
+
+          <div class="role">
+            <div class="role__header">
+              <span class="role__title">Student Verifier</span>
+              <span class="role__date">Apr 2025 – Present</span>
+            </div>
+            <p class="role__org">Auburn University RFID Lab</p>
+            <p class="role__desc">
+              Reviewed 1,400+ supplier tagging procedures for RFID standards
+              compliance. Verified team member validations and assisted with
+              confidential data collection and summarization projects.
+            </p>
+          </div>
+
+          <div class="role">
+            <div class="role__header">
+              <span class="role__title">Secretary</span>
+              <span class="role__date">Aug 2023 – May 2025</span>
+            </div>
+            <p class="role__org">Data Science Society, Auburn University</p>
+            <p class="role__desc">
+              Organized a monthly guest lecturer series presenting industry and
+              research perspectives on data science. Led focused small-group
+              activities including Kaggle competitions.
+            </p>
+          </div>
+
+          <div class="role">
+            <div class="role__header">
+              <span class="role__title">Member</span>
+              <span class="role__date">Aug 2023 – Present</span>
+            </div>
+            <p class="role__org">Association for Computing Machinery, Auburn University</p>
+            <p class="role__desc">
+              Active in Ethical Hacking Club (LANL CyberFire CTF event),
+              Competitive Programming team (Kaggle challenges), and
+              Technical Interview Association (weekly LeetCode sessions).
+            </p>
+          </div>
+
+          <!-- TODO: Add future internships or jobs here using the same .role structure -->
+        </div>
+
+        <div class="skills">
+          <h3 class="skills__heading">Skills</h3>
+
+          <div class="skill-group">
+            <p class="skill-group__label">Programming</p>
+            <ul class="tags">
+              <li class="tag">Python</li>
+              <li class="tag">Java</li>
+              <li class="tag">HTML / CSS</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">C</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group__label">Data Science</p>
+            <ul class="tags">
+              <li class="tag">Pandas</li>
+              <li class="tag">NumPy</li>
+              <li class="tag">TensorFlow</li>
+              <li class="tag">Keras</li>
+              <li class="tag">scikit-learn</li>
+              <li class="tag">Matplotlib</li>
+              <li class="tag">Seaborn</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group__label">Tools</p>
+            <ul class="tags">
+              <li class="tag">Git</li>
+              <li class="tag">Linux</li>
+              <li class="tag">Jupyter</li>
+              <li class="tag">Wireshark</li>
+              <li class="tag">Excel</li>
+            </ul>
+          </div>
+
+          <!-- Currently Learning — amber tags distinguish in-progress skills -->
+          <div class="skill-group">
+            <p class="skill-group__label">Currently Learning</p>
+            <!-- TODO: Update this list as your skills evolve -->
+            <ul class="tags">
+              <li class="tag tag--learning">MySQL</li>
+              <li class="tag tag--learning">React</li>
+              <li class="tag tag--learning">Power BI</li>
+              <li class="tag tag--learning">R</li>
+            </ul>
+          </div>
+
+          <h3 class="skills__heading" style="margin-top: 2rem;">Awards</h3>
+          <ul class="awards-list">
+            <li>Auburn Engineering Honors Circle — 2025</li>
+            <li>Xerox Innovation &amp; IT Award — 2023</li>
+            <li>Merit Innerview Service Award — 2022</li>
+            <li>CS / Excellence in Technology Award — 2020–2023</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Timeline ───────────────────────────────────────────────────────── -->
+  <section id="timeline" class="section">
+    <div class="container">
+      <header class="section__header">
+        <span class="section__label">Journey</span>
+        <h2 class="section__title">Timeline</h2>
+      </header>
+      <ol class="timeline" aria-label="Career and education timeline">
+
+        <li class="tl-item">
+          <div class="tl-item__date">2020–2023</div>
+          <div class="tl-item__dot" aria-hidden="true"></div>
+          <div class="tl-item__content">
+            <h3 class="tl-item__title">CS / Excellence in Technology Award</h3>
+            <p class="tl-item__desc">Received award across four consecutive years during high school.</p>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-item__date">Aug 2023</div>
+          <div class="tl-item__dot" aria-hidden="true"></div>
+          <div class="tl-item__content">
+            <h3 class="tl-item__title">Enrolled at Auburn University</h3>
+            <p class="tl-item__desc">Joined Honors College; CS / AI Engineering major with Business minor. Immediately joined ACM and Data Science Society.</p>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-item__date">Fall 2023</div>
+          <div class="tl-item__dot" aria-hidden="true"></div>
+          <div class="tl-item__content">
+            <h3 class="tl-item__title">Xerox Innovation &amp; IT Award</h3>
+            <p class="tl-item__desc">Recognized for innovation and technical excellence.</p>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-item__date">Spring 2024</div>
+          <div class="tl-item__dot" aria-hidden="true"></div>
+          <div class="tl-item__content">
+            <h3 class="tl-item__title">Auburn Hacks — Solar Flare Prediction</h3>
+            <p class="tl-item__desc">Built a solar flare predictor in 24 hours with a team of 3. Also began the NFL Fantasy Football ML project and co-led the RL Study Group with two graduate students.</p>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-item__date">Aug 2023–May 2025</div>
+          <div class="tl-item__dot" aria-hidden="true"></div>
+          <div class="tl-item__content">
+            <h3 class="tl-item__title">Secretary, Data Science Society</h3>
+            <p class="tl-item__desc">Led guest lecturer series and small group activities across two academic years.</p>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-item__date">Apr 2025</div>
+          <div class="tl-item__dot" aria-hidden="true"></div>
+          <div class="tl-item__content">
+            <h3 class="tl-item__title">Student Verifier — Auburn RFID Lab</h3>
+            <p class="tl-item__desc">Began reviewing supplier tagging procedures; 1,400+ procedures audited to date.</p>
+          </div>
+        </li>
+
+        <li class="tl-item tl-item--current">
+          <div class="tl-item__date">2025</div>
+          <div class="tl-item__dot" aria-hidden="true"></div>
+          <div class="tl-item__content">
+            <h3 class="tl-item__title">Auburn Engineering Honors Circle</h3>
+            <p class="tl-item__desc">Selected for the Honors Circle within the Samuel Ginn College of Engineering.</p>
+          </div>
+        </li>
+
+        <!-- TODO: Add new timeline events above this line as they happen -->
+
+        <li class="tl-item tl-item--future">
+          <div class="tl-item__date">May 2027</div>
+          <div class="tl-item__dot" aria-hidden="true"></div>
+          <div class="tl-item__content">
+            <h3 class="tl-item__title">Expected Graduation</h3>
+            <p class="tl-item__desc">B.S. in Computer Science / AI Engineering with Business minor, Auburn University.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Contact ────────────────────────────────────────────────────────── -->
+  <section id="contact" class="section section--alt">
+    <div class="container contact">
+      <header class="section__header">
+        <span class="section__label">Get In Touch</span>
+        <h2 class="section__title">Contact</h2>
+        <p class="section__subtitle">
+          Open to research collaborations, internships, and interesting side projects.<br />
+          The best way to reach me is email.
+        </p>
+      </header>
+      <div class="contact__links">
+
+        <a href="mailto:logan@lmiller.io" class="contact-link">
+          <span class="contact-link__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+          </span>
+          <span>logan@lmiller.io</span>
+        </a>
+
+        <a href="https://github.com/LoganMiller5505" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.186 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.912.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.204 22 16.447 22 12.021 22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </span>
+          <span>github.com/LoganMiller5505</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/loganmiller5505/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </span>
+          <span>LinkedIn</span>
+        </a>
+
+        <a href="resume.pdf" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </span>
+          <span>Download Resume</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; 2026 Logan Miller</p>
+      <p class="footer__note">Built with HTML &amp; CSS — no frameworks</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+
+      // ── Nav: highlight active section link on scroll ──────────────────────
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
+      const navObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting)
+            navLinks.forEach(a => a.classList.toggle('nav__link--active', a.getAttribute('href') === '#' + e.target.id));
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(s => navObserver.observe(s));
+
+      // ── Scroll reveal: fade content up as it enters the viewport ─────────
+      const revealTargets = document.querySelectorAll(
+        '.section__header, .card, .edu-card, .tl-item, .role, .contact-link'
+      );
+      revealTargets.forEach(el => el.classList.add('reveal'));
+
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          // Stagger siblings that reveal at the same time
+          const peers = [...e.target.parentElement.querySelectorAll('.reveal:not(.is-visible)')];
+          const idx = peers.indexOf(e.target);
+          e.target.style.transitionDelay = (idx * 0.08) + 's';
+          e.target.classList.add('is-visible');
+          revealObserver.unobserve(e.target);
+        });
+      }, { threshold: 0.1 });
+      revealTargets.forEach(el => revealObserver.observe(el));
+
+      // ── Card: 3D tilt + cursor spotlight ─────────────────────────────────
+      document.querySelectorAll('.card').forEach(card => {
+        let raf;
+        card.addEventListener('mousemove', e => {
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            const r = card.getBoundingClientRect();
+            const x = e.clientX - r.left;
+            const y = e.clientY - r.top;
+            const tX = ((y / r.height) - 0.5) * -9;
+            const tY = ((x / r.width)  - 0.5) *  9;
+            card.style.transform = `translateY(-6px) rotateX(${tX.toFixed(1)}deg) rotateY(${tY.toFixed(1)}deg)`;
+            card.style.setProperty('--mouse-x', x + 'px');
+            card.style.setProperty('--mouse-y', y + 'px');
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          cancelAnimationFrame(raf);
+          card.style.transform = '';
+        });
+      });
+
+      // ── GPA count-up when the education card scrolls into view ───────────
+      const gpaEl = document.querySelector('.edu-card__gpa');
+      if (gpaEl) {
+        const target = 3.78;
+        let done = false;
+        new IntersectionObserver(([e]) => {
+          if (!e.isIntersecting || done) return;
+          done = true;
+          const start = performance.now();
+          const duration = 1100;
+          const tick = now => {
+            const t = Math.min((now - start) / duration, 1);
+            // Ease out cubic
+            const ease = 1 - Math.pow(1 - t, 3);
+            const textNode = [...gpaEl.childNodes].find(n => n.nodeType === 3);
+            if (textNode) textNode.textContent = (target * ease).toFixed(2);
+            if (t < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }, { threshold: 0.6 }).observe(gpaEl);
+      }
+
+    }());
+  </script>
+
 </body>
 </html>
