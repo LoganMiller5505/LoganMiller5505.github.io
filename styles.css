@@ -22,6 +22,9 @@
   --timeline-line:    #d1d5db;
   --timeline-dot:     var(--accent);
 
+  --accent-warm:       #f59e0b;
+  --accent-warm-light: #fef3c7;
+
   --radius-sm:        6px;
   --radius-md:        12px;
   --radius-lg:        20px;
@@ -48,7 +51,28 @@
     --shadow-card-hover:0 8px 24px rgba(99,102,241,0.25), 0 0 0 1px var(--accent);
 
     --timeline-line:    #3f3f46;
+
+    --accent-warm:       #fbbf24;
+    --accent-warm-light: #292107;
   }
+}
+
+/* ─── Film grain ─────────────────────────────────────────────────────────── */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.032;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before { opacity: 0.045; mix-blend-mode: screen; }
 }
 
 /* ─── Reset ──────────────────────────────────────────────────────────────── */
@@ -67,6 +91,7 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--bg-page);
   color: var(--text-primary);
+  counter-reset: sections;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -104,6 +129,7 @@ img {
 
 .section__header {
   margin-bottom: 3rem;
+  counter-increment: sections;
 }
 
 .section__label {
@@ -121,6 +147,14 @@ img {
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.2;
+}
+
+.section__title::before {
+  content: "0" counter(sections) " /\00a0";
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--accent-warm);
+  letter-spacing: 0.04em;
 }
 
 .section__subtitle {
@@ -188,14 +222,14 @@ img {
 
 /* Amber variant for "Currently Learning" skills */
 .tag--learning {
-  background: #fff7ed;
-  color: #c2410c;
+  background: var(--accent-warm-light);
+  color: var(--accent-warm);
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
   .tag--learning {
-    background: #431407;
-    color: #fb923c;
+    border-color: rgba(251, 191, 36, 0.25);
   }
 }
 
@@ -375,7 +409,6 @@ img {
   .hero__deco { opacity: 0.38; }
 }
 
-/* TODO: YOU — add this class to an <img> in the hero when you have a headshot */
 .hero__photo {
   width: 100%;
   max-width: 420px;
@@ -383,14 +416,56 @@ img {
   object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card-hover);
+  position: relative;
+  z-index: 1;
+}
+
+.hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.hero__visual::before,
+.hero__visual::after {
+  content: '';
+  position: absolute;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+}
+
+.hero__visual::before {
+  inset: 0;
+  border: 2px solid var(--accent);
+  opacity: 0.35;
+  transform: rotate(3deg);
+}
+
+.hero__visual::after {
+  inset: 0;
+  border: 2px solid var(--accent-warm);
+  opacity: 0.28;
+  transform: rotate(-1.5deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero__visual::before { opacity: 0.50; }
+  .hero__visual::after  { opacity: 0.40; }
 }
 
 /* ─── Cards ──────────────────────────────────────────────────────────────── */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .cards { grid-template-columns: 1fr; }
 }
 
 .card {
@@ -600,7 +675,7 @@ img {
 
 .role__date {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--accent-warm);
   white-space: nowrap;
 }
 
@@ -629,6 +704,10 @@ img {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
+}
+
+.skill-group__label--warm {
+  color: var(--accent-warm);
 }
 
 .awards-list {
@@ -678,7 +757,7 @@ img {
   text-align: right;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--accent-warm);
   padding-top: 3px;
   padding-right: 0.5rem;
   line-height: 1.4;
@@ -967,6 +1046,23 @@ img {
   100% { background-position: 200% center; }
 }
 
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.hero__cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 300;
+  animation: cursorBlink 1s step-end infinite;
+  margin-left: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero-typed::after { content: "building intelligent systems, one model at a time."; }
+}
+
 /* ─── Hero entrance (staggered on load) ─────────────────────────────────── */
 
 .hero__eyebrow { animation: fadeUp 0.55s 0.05s ease both; }
@@ -1085,4 +1181,6 @@ img {
     will-change: auto;
   }
   #hero-net { display: none; }
+  body::before { display: none; }
+  .hero__cursor { animation: none; }
 }
