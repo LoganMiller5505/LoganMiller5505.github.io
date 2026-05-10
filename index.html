@@ -26,7 +26,7 @@
   <header class="nav" role="banner">
     <div class="container nav__inner">
       <a href="#hero" class="nav__logo">Logan Miller</a>
-      <nav aria-label="Primary">
+      <nav aria-label="Primary" id="primary-nav">
         <ul class="nav__links">
           <li><a href="#hero">About</a></li>
           <li><a href="#education">Education</a></li>
@@ -37,6 +37,9 @@
           <li><a href="resume.pdf" class="nav__cta" target="_blank" rel="noopener">Resume ↗</a></li>
         </ul>
       </nav>
+      <button class="nav__toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 

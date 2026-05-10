@@ -1,5 +1,30 @@
 (function () {
 
+  // ── Mobile nav toggle ─────────────────────────────────────────────────
+  const navEl     = document.querySelector('.nav');
+  const toggleBtn = document.querySelector('.nav__toggle');
+  if (navEl && toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const open = navEl.classList.toggle('nav--open');
+      toggleBtn.setAttribute('aria-expanded', String(open));
+      toggleBtn.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    });
+    document.querySelectorAll('.nav__links a').forEach(a => {
+      a.addEventListener('click', () => {
+        navEl.classList.remove('nav--open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.setAttribute('aria-label', 'Open navigation');
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!navEl.contains(e.target) && navEl.classList.contains('nav--open')) {
+        navEl.classList.remove('nav--open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.setAttribute('aria-label', 'Open navigation');
+      }
+    });
+  }
+
   // ── Nav: highlight active section link on scroll ──────────────────────
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__links a[href^="#"]');
