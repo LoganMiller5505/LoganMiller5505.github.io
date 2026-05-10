@@ -573,6 +573,10 @@ img {
   align-items: start;
 }
 
+.edu-card + .edu-card {
+  margin-top: 1.5rem;
+}
+
 .edu-card__institution {
   font-size: 1.5rem;
   font-weight: 800;
@@ -612,14 +616,16 @@ img {
   flex-shrink: 0;
 }
 
-.edu-card__gpa {
+.edu-card__gpa,
+.edu-card__gpa-2{
   font-size: 3rem;
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
 }
 
-.edu-card__gpa span {
+.edu-card__gpa span,
+.edu-card__gpa-2 span {
   display: block;
   font-size: 0.7rem;
   font-weight: 700;
@@ -872,39 +878,6 @@ img {
   .cursor-dot { display: none !important; }
 }
 
-/* ─── Diagonal Section Dividers ──────────────────────────────────────────── */
-
-.section--clip-down {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
-  padding-bottom: calc(6rem + 60px);
-  margin-bottom: -60px;
-}
-
-.section--clip-down-alt {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));
-  padding-bottom: calc(6rem + 60px);
-  margin-bottom: -60px;
-}
-
-@media (max-width: 768px) {
-  .section--clip-down,
-  .section--clip-down-alt {
-    padding-bottom: calc(4rem + 60px);
-  }
-}
-
-@media (max-width: 640px) {
-  .section--clip-down {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 32px), 0 100%);
-    padding-bottom: calc(4rem + 32px);
-    margin-bottom: -32px;
-  }
-  .section--clip-down-alt {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 32px));
-    padding-bottom: calc(4rem + 32px);
-    margin-bottom: -32px;
-  }
-}
 
 /* ─── Footer ─────────────────────────────────────────────────────────────── */
 

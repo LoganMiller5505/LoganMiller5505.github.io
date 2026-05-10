@@ -74,6 +74,27 @@
     }, { threshold: 0.6 }).observe(gpaEl);
   }
 
+  const gpaEl2 = document.querySelector('.edu-card__gpa-2');
+  if (gpaEl2) {
+    const target = 4.13;
+    let done = false;
+    new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting || done) return;
+      done = true;
+      const start = performance.now();
+      const duration = 1100;
+      const tick = now => {
+        const t = Math.min((now - start) / duration, 1);
+        // Ease out cubic
+        const ease = 1 - Math.pow(1 - t, 3);
+        const textNode = [...gpaEl2.childNodes].find(n => n.nodeType === 3);
+        if (textNode) textNode.textContent = (target * ease).toFixed(2);
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.6 }).observe(gpaEl2);
+  }
+
   // ── Custom cursor with lerp spring physics ────────────────────────────
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const dot = document.createElement('div');
@@ -107,7 +128,6 @@
       "Auburn Honors College · 3.82 GPA · Class of '27.",
       'building intelligent systems, one model at a time.',
       'exploring the intersection of ML and real-world data.',
-      'Fantasy Football analytics · RFID research · ACM.',
     ];
     let pi = 0, ci = 0, deleting = false;
     const TYPE_MS = 48, DELETE_MS = 26, PAUSE_MS = 2200, START_PAUSE = 800;

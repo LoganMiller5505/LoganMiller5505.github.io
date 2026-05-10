@@ -53,10 +53,10 @@
         </p>
         <!-- TODO: Update class year ("junior"), GPA, graduation year, current role, and activities as they change -->
         <p class="hero__bio">
-          Honors College junior (GPA 3.82, May 2027) with a Business minor.
-          I work at Auburn's RFID Lab reviewing supplier compliance and spend
-          the rest of my time on competitive programming, ethical hacking,
-          and ML research.
+          Honors College senior (GPA 3.82, May 2027) with a Business minor.
+          I work at Auburn's RFID Lab reviewing supplier compliance. Current
+          Data Engineering intern at Medpace. Passionate about machine learning, data
+          science, and solving real-world problems.
         </p>
         <div class="hero__actions">
           <a href="#projects" class="btn btn--primary">See My Work</a>
@@ -70,7 +70,7 @@
   </section>
 
   <!-- ── Education ─────────────────────────────────────────────────────── -->
-  <section id="education" class="section section--clip-down">
+  <section id="education" class="section">
     <div class="container">
       <header class="section__header">
         <span class="section__label">Academia</span>
@@ -102,7 +102,31 @@
           <p class="edu-card__date">Expected May 2027</p>
         </div>
       </div>
+
+      <div class="edu-card">
+        <div class="edu-card__main">
+          <p class="edu-card__institution">The Summit Country Day School</p>
+          <p class="edu-card__degree">High School Diploma</p>
+          <div class="edu-card__details">
+            <span class="edu-card__detail">4x CS Award Recipient</span>
+            <span class="edu-card__detail">Cincinnati, OH</span>
+          </div>
+          <div class="edu-card__coursework">
+            <p class="skill-group__label">Involvements</p>
+            <ul class="tags">
+              <li class="tag">Robotics FTC Team #14365 Captain</li>
+              <li class="tag">Middle School Robotics Club Mentor</li>
+              <li class="tag">Machine Learning Independent Study Course</li>
+              <li class="tag">Track and Field</li>
+            </ul>
+        </div>
+      </div>
+      <div class="edu-card__aside">
+          <p class="edu-card__gpa-2">4.13<span>GPA</span></p>
+          <p class="edu-card__date">Graduated May 2023</p>
+        </div>
     </div>
+
   </section>
 
   <!-- ── Projects ──────────────────────────────────────────────────────── -->
@@ -115,8 +139,7 @@
       </header>
       <div class="cards">
 
-        <!-- TODO: Remove card--featured from the first card once you have 4+ projects (uniform grid looks better at that point) -->
-        <article class="card card--featured">
+        <article class="card">
           <!-- Bar chart icon — NFL data analytics -->
           <div class="card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -204,6 +227,94 @@
           </div>
         </article>
 
+        <article class="card">
+          <!-- Certificate/ribbon icon — Kaggle Certs -->
+          <div class="card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Kaggle Certifications</h3>
+            <p class="card__meta">Self-directed · 2024 – Present</p>
+            <p class="card__desc">
+              Completed Kaggle micro-course certifications in Intermediate ML,
+              Feature Engineering, Data Cleaning, Data Visualization, and
+              Advanced SQL — each with hands-on notebooks and exercises.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">SQL</li>
+              <li class="tag">scikit-learn</li>
+              <li class="tag">Pandas</li>
+            </ul>
+            <div class="card__links">
+              <a href="https://github.com/LoganMiller5505/KaggleCerts" target="_blank" rel="noopener" class="card__link">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- Music notes icon — Spotify genre classification -->
+          <div class="card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18V5l12-2v13"/>
+              <circle cx="6" cy="18" r="3"/>
+              <circle cx="18" cy="16" r="3"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Spotify Genre Classification</h3>
+            <p class="card__meta">STAT 4000 · Auburn University · Fall 2024</p>
+            <p class="card__desc">
+              Semester-long collaborative project classifying Spotify tracks by genre
+              using unsupervised learning. Clustered tracks into 5 supergenres via
+              feature engineering, then compared classification accuracy before and
+              after clustering to quantify the improvement.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">Jupyter</li>
+              <li class="tag">scikit-learn</li>
+              <li class="tag">Pandas</li>
+            </ul>
+            <div class="card__links">
+              <a href="https://github.com/LoganMiller5505/DataSciProject" target="_blank" rel="noopener" class="card__link">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- Traffic light icon — RL traffic simulation -->
+          <div class="card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="7" y="2" width="10" height="20" rx="2"/>
+              <circle cx="12" cy="7" r="2"/>
+              <circle cx="12" cy="12" r="2"/>
+              <circle cx="12" cy="17" r="2"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Traffic Signal RL Controller</h3>
+            <p class="card__meta">COMP-6600 · Auburn University · Team of 3</p>
+            <p class="card__desc">
+              Group project training a reinforcement learning agent to minimize
+              vehicle wait times by controlling traffic signal phases in a
+              discrete-time intersection simulator. Includes a Tkinter-based
+              visual interface for real-time observation.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">Reinforcement Learning</li>
+              <li class="tag">Tkinter</li>
+            </ul>
+            <div class="card__links">
+              <a href="https://github.com/jacobberanek/traffic-simulation-reinforcement-learning" target="_blank" rel="noopener" class="card__link">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
         <!-- TODO: Add more project cards here using the same <article class="card"> structure above -->
 
       </div>
@@ -211,7 +322,7 @@
   </section>
 
   <!-- ── Experience & Skills ────────────────────────────────────────────── -->
-  <section id="experience" class="section section--alt section--clip-down-alt">
+  <section id="experience" class="section section--alt">
     <div class="container">
       <header class="section__header">
         <span class="section__label">Background</span>
@@ -332,7 +443,7 @@
   </section>
 
   <!-- ── Timeline ───────────────────────────────────────────────────────── -->
-  <section id="timeline" class="section section--clip-down">
+  <section id="timeline" class="section">
     <div class="container">
       <header class="section__header">
         <span class="section__label">Journey</span>
